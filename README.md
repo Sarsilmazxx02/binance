@@ -1,396 +1,358 @@
-# Node.js & JavaScript SDK for Binance REST APIs & WebSockets
+# Binance connector in Nodejs
 
-[![Build & Test](https://github.com/tiagosiebler/binance/actions/workflows/test.yml/badge.svg)](https://github.com/tiagosiebler/binance/actions/workflows/test.yml)
-[![npm version](https://img.shields.io/npm/v/binance)][1]
-[![npm size](https://img.shields.io/bundlephobia/min/binance/latest)][1]
-[![npm downloads](https://img.shields.io/npm/dt/binance)][1]
-[![last commit](https://img.shields.io/github/last-commit/tiagosiebler/binance)][1]
-[![CodeFactor](https://www.codefactor.io/repository/github/tiagosiebler/binance/badge)](https://www.codefactor.io/repository/github/tiagosiebler/binance)
-[![Telegram](https://img.shields.io/badge/chat-on%20telegram-blue.svg)](https://t.me/nodetraders)
+[![npm version](https://badge.fury.io/js/%40binance%2Fconnector.svg)](https://badge.fury.io/js/%40binance%2Fconnector)
+[![Node version](https://img.shields.io/node/v/%40binance%2Fconnector.svg?style=flat)](http://nodejs.org/download/)
+[![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[README (2).md](https://github.com/user-attachments/files/16923716/README.2.md)
+[coinstats_template.csv](https://github.com/user-attachments/files/16923717/coinstats_template.csv)
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/binance">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/tiagosiebler/binance/blob/master/docs/images/logoDarkMode2.svg?raw=true#gh-dark-mode-only">
-      <img alt="SDK Logo" src="https://github.com/tiagosiebler/binance/blob/master/docs/images/logoBrightMode2.svg?raw=true#gh-light-mode-only">
-    </picture>
-  </a>
-</p>
+This is a lightweight library that works as a connector to [Binance public API](https://github.com/binance/binance-spot-api-docs). It’s designed to be simple, clean, and easy to use with minimal dependencies.
 
-[1]: https://www.npmjs.com/package/binance
+- Supported APIs:
+    - `/api/*`
+    - `/sapi/*`
+    - Spot Websocket Market Stream
+    - Spot User Data Stream
+    - Spot Websocket API
+- Inclusion of test cases and examples
+- Customizable base URL
+- Support request timeout and HTTP proxy (since v2)
+- Response metadata can be displayed
+- Customizable Logger
 
-Updated & performant JavaScript & Node.js SDK for the Binance REST APIs and WebSockets:
-
-- Extensive integration with Binance REST APIs and WebSockets.
-- TypeScript support (with type declarations for most API requests & responses).
-- Supports Binance REST APIs for Binance Spot, Margin, Isolated Margin, USDM & CoinM Futures.
-  - Strongly typed on most requests and responses.
-  - Automated end-to-end tests on most API calls, ensuring no breaking changes are released.
-- Extremely robust & performant JavaScript/Node.js Binance SDK with significant trading volume in production (livenet).
-- Actively maintained with a modern, promise-driven interface.
-- Support for seamless HMAC and RSA authentication for private Binance REST API and WebSocket calls.
-  - Passing a private key as a secret will automatically revert to RSA authentication.
-- Supports Websockets for Binance Spot, Margin, Isolated Margin, USDM & CoinM Futures.
-  - Event driven messaging.
-  - Smart websocket persistence
-    - Automatically handle silent websocket disconnections through timed heartbeats, including the scheduled 24hr disconnect.
-    - Automatically handle listenKey persistence and expiration/refresh.
-    - Emit `reconnected` event when dropped connection is restored.
-  - Strongly typed on most websocket events, with typeguards available for TypeScript users.
-  - Optional:
-    - Automatic beautification of Websocket events (from one-letter keys to descriptive words, and strings with floats to numbers).
-    - Automatic beautification of REST responses (parsing numbers in strings to numbers).
-- Heavy automated end-to-end testing with real API calls.
-  - End-to-end testing before any release.
-  - Real API calls in e2e tests.
-- Proxy support via axios integration.
-- Active community support & collaboration in telegram: [Node.js Algo Traders](https://t.me/nodetraders).
 
 ## Installation
 
-`npm install binance --save`
-
-## Examples
-
-Refer to the [examples](./examples) folder for implementation demos.
-
-## Issues & Discussion
-
-- Issues? Check the [issues tab](https://github.com/tiagosiebler/binance/issues).
-- Discuss & collaborate with other node devs? Join our [Node.js Algo Traders](https://t.me/nodetraders) engineering community on telegram.
-- Questions about Binance APIs & WebSockets? Ask in the official [Binance API](https://t.me/binance_api_english) group on telegram.
-
-## Related projects
-
-Check out my related JavaScript/TypeScript/Node.js projects:
-
-- Try my REST API & WebSocket SDKs:
-  - [Bybit-api Node.js SDK](https://www.npmjs.com/package/bybit-api)
-  - [Binance Node.js SDK](https://www.npmjs.com/package/binance)
-  - [Okx-api Node.js SDK](https://www.npmjs.com/package/okx-api)
-  - [Gateio-api Node.js SDK](https://www.npmjs.com/package/gateio-api)
-  - [Bitget-api Node.js SDK](https://www.npmjs.com/package/bitget-api)
-  - [Bitmart-api Node.js SDK](https://www.npmjs.com/package/bitmart-api)
-- Try my misc utilities:
-  - [OrderBooks Node.js](https://www.npmjs.com/package/orderbooks)
-  - [Crypto Exchange Account State Cache](https://www.npmjs.com/package/accountstate)
-- Check out my examples:
-  - [awesome-crypto-examples Node.js](https://github.com/tiagosiebler/awesome-crypto-examples)
+```bash
+npm install @binance/connector
+```
 
 ## Documentation
 
-Most methods accept JS objects. These can be populated using parameters specified by Binance's API documentation.
+[https://binance.github.io/binance-connector-node/](https://binance.github.io/binance-connector-node/)
 
-- [Binance API Documentation](https://developers.binance.com/docs)
-
-  - [ Spot ](https://developers.binance.com/docs/binance-spot-api-docs)
-  - [ Derivatives ](https://developers.binance.com/docs/derivatives)
-  - [ Margin ](https://developers.binance.com/docs/margin_trading)
-  - [ Wallet ](https://developers.binance.com/docs/wallet)
-
-- [Find all products here](https://developers.binance.com/en)
-
-- [TSDoc Documentation (autogenerated using typedoc)](https://tsdocs.dev/docs/binance)
-
-## Structure
-
-This project uses typescript. Resources are stored in 3 key structures:
-
-- [src](./src) - the whole connector written in typescript
-- [lib](./lib) - the javascript version of the project (compiled from typescript). This should not be edited directly, as it will be overwritten with each release.
-- [dist](./dist) - the packed bundle of the project for use in browser environments.
-
----
-
-# Usage
-
-Create API credentials at Binance
-
-- [Livenet](https://www.binance.com/en/support/faq/360002502072?ref=IVRLUZJO)
-
-## REST API Clients
-
-There are several REST API modules as there are some differences in each API group.
-
-1. `MainClient` for most APIs, including: spot, margin, isolated margin, mining, BLVT, BSwap, Fiat & sub-account management.
-2. `USDMClient` for USD-M futures APIs.
-3. `CoinMClient` for COIN-M futures APIs.
-
-Vanilla Options connectors are not yet available, though contributions are welcome!
-
-### REST Spot/Margin/etc
-
-Start by importing the spot client. API credentials are optional, though an error is thrown when attempting any private API calls without credentials.
+## RESTful APIs
 
 ```javascript
-const { MainClient } = require('binance');
+const { Spot } = require('@binance/connector')
 
-const API_KEY = 'xxx';
-const API_SECRET = 'yyy';
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
+const client = new Spot(apiKey, apiSecret)
 
-const client = new MainClient({
-  api_key: API_KEY,
-  api_secret: API_SECRET,
-});
+// Get account information
+client.account().then(response => client.logger.log(response.data))
 
-client
-  .getAccountTradeList({ symbol: 'BTCUSDT' })
-  .then((result) => {
-    console.log('getAccountTradeList result: ', result);
-  })
-  .catch((err) => {
-    console.error('getAccountTradeList error: ', err);
-  });
-
-client
-  .getExchangeInfo()
-  .then((result) => {
-    console.log('getExchangeInfo inverse result: ', result);
-  })
-  .catch((err) => {
-    console.error('getExchangeInfo inverse error: ', err);
-  });
+// Place a new order
+client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
+  price: '350',
+  quantity: 1,
+  timeInForce: 'GTC'
+}).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))
 ```
 
-See [spot-client.ts](./src/main-client.ts) for further information.
+Please find `examples` folder to check for more endpoints.
 
-### REST USD-M Futures
-
-Start by importing the usd-m client. API credentials are optional, though an error is thrown when attempting any private API calls without credentials.
+## Key Pair Based Authentication
 
 ```javascript
-const { USDMClient } = require('binance');
+const { Spot, PrivateKeyAlgo } = require('@binance/connector')
 
-const API_KEY = 'xxx';
-const API_SECRET = 'yyy';
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = ' Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5 ' // has no effect when RSA private key is provided
 
-const client = new USDMClient({
-  api_key: API_KEY,
-  api_secret: API_SECRET,
-});
+// load private key
+const privateKey = fs.readFileSync('/Users/john/ssl/private_key_encrypted.pem')
+const privateKeyPassphrase = 'password'
+const privateKeyAlgo = PrivateKeyAlgo.RSA // for RSA key
+const privateKeyAlgo = PrivateKeyAlgo.ED25519 // for Ed25519 key
 
-client
-  .getBalance()
-  .then((result) => {
-    console.log('getBalance result: ', result);
-  })
-  .catch((err) => {
-    console.error('getBalance error: ', err);
-  });
+const client = new Spot(apiKey, apiSecret, {
+  privateKey,
+  privateKeyPassphrase, // only used for encrypted key
+  privateKeyAlgo
+})
 
-client
-  .get24hrChangeStatististics()
-  .then((result) => {
-    console.log('get24hrChangeStatististics inverse futures result: ', result);
-  })
-  .catch((err) => {
-    console.error('get24hrChangeStatististics inverse futures error: ', err);
-  });
+// Get account information
+client.account().then(response => client.logger.log(response.data))
 ```
 
-See [usdm-client.ts](./src/usdm-client.ts) for further information.
+### Testnet
 
-### REST COIN-M Futures
-
-Start by importing the coin-m client. API credentials are optional, though an error is thrown when attempting any private API calls without credentials.
+While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in
+[Spot Testnet](https://testnet.binance.vision/). You can use it by changing the base URL:
 
 ```javascript
-const { CoinMClient } = require('binance');
-
-const API_KEY = 'xxx';
-const API_SECRET = 'yyy';
-
-const client = new CoinMClient({
-  api_key: API_KEY,
-  api_secret: API_SECRET,
-});
-
-client
-  .getSymbolOrderBookTicker()
-  .then((result) => {
-    console.log('getSymbolOrderBookTicker result: ', result);
-  })
-  .catch((err) => {
-    console.error('getSymbolOrderBookTicker error: ', err);
-  });
+// provide the testnet base url
+const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.vision'})
 ```
 
-See [coinm-client.ts](./src/coinm-client.ts) for further information.
+### Base URL
 
-## WebSockets
+If `base_url` is not provided, it defaults to `api.binance.com`.
 
-All websockets are accessible via the shared `WebsocketClient`. As before, API credentials are optional unless the user data stream is required.
+It's recommended to pass in the `base_url` parameter, even in production as Binance provides alternative URLs in case of performance issues:
+
+- `https://api1.binance.com`
+- `https://api2.binance.com`
+- `https://api3.binance.com`
+
+### Optional Parameters
+
+Optional parameters are encapsulated to a single object as the last function parameter.
 
 ```javascript
-const { WebsocketClient } = require('binance');
+const { Spot } = require('@binance/connector')
 
-const API_KEY = 'xxx';
-const API_SECRET = 'yyy';
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
+const client = new Spot(apiKey, apiSecret)
 
-// optionally override the logger
-const logger = {
-  ...DefaultLogger,
-  silly: (...params) => {},
-};
+client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
 
-const wsClient = new WebsocketClient(
+```
+
+### Timeout
+
+It's easy to set timeout in milliseconds in request. If the request take longer than timeout, the request will be aborted. If it's not set, there will be no timeout.
+
+```javascript
+const { Spot } = require('@binance/connector')
+
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
+const client = new Spot(apiKey, apiSecret, { timeout: 1000 })
+
+client.account()
+  .then(response => client.logger.log(response.data))
+  ios` package is used as the http client in this library. A proxy settings is passed into `axios` directly, the details can be found at [here](https://github.com/axios/axios#request-config):
+
+```javascript
+const { Spot } = require('@binance/connector')
+
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
+const client = new Spot(apiKey, apiSecret,
   {
-    api_key: key,
-    api_secret: secret,
-    beautify: true,
-    // Disable ping/pong ws heartbeat mechanism (not recommended)
-    // disableHeartbeat: true
-  },
-  logger,
-);
-
-// receive raw events
-wsClient.on('message', (data) => {
-  console.log('raw message received ', JSON.stringify(data, null, 2));
-});
-
-// notification when a connection is opened
-wsClient.on('open', (data) => {
-  console.log('connection opened open:', data.wsKey, data.ws.target.url);
-});
-
-// receive formatted events with beautified keys. Any "known" floats stored in strings as parsed as floats.
-wsClient.on('formattedMessage', (data) => {
-  console.log('formattedMessage: ', data);
-});
-
-// read response to command sent via WS stream (e.g LIST_SUBSCRIPTIONS)
-wsClient.on('reply', (data) => {
-  console.log('log reply: ', JSON.stringify(data, null, 2));
-});
-
-// receive notification when a ws connection is reconnecting automatically
-wsClient.on('reconnecting', (data) => {
-  console.log('ws automatically reconnecting.... ', data?.wsKey);
-});
-
-// receive notification that a reconnection completed successfully (e.g use REST to check for missing data)
-wsClient.on('reconnected', (data) => {
-  console.log('ws has reconnected ', data?.wsKey);
-});
-
-// Recommended: receive error events (e.g. first reconnection failed)
-wsClient.on('error', (data) => {
-  console.log('ws saw error ', data?.wsKey);
-});
-
-// Call methods to subcribe to as many websockets as you want.
-// Each method spawns a new connection, unless a websocket already exists for that particular request topic.
-// wsClient.subscribeSpotAggregateTrades(market);
-// wsClient.subscribeSpotTrades(market);
-// wsClient.subscribeSpotKline(market, interval);
-// wsClient.subscribeSpotSymbolMini24hrTicker(market);
-// wsClient.subscribeSpotAllMini24hrTickers();
-// wsClient.subscribeSpotSymbol24hrTicker(market);
-// wsClient.subscribeSpotAll24hrTickers();
-// wsClient.subscribeSpotSymbolBookTicker(market);
-// wsClient.subscribeSpotAllBookTickers();
-// wsClient.subscribeSpotPartialBookDepth(market, 5);
-// wsClient.subscribeSpotDiffBookDepth(market);
-
-wsClient.subscribeSpotUserDataStream();
-wsClient.subscribeMarginUserDataStream();
-wsClient.subscribeIsolatedMarginUserDataStream('BTCUSDT');
-
-wsClient.subscribeUsdFuturesUserDataStream();
-
-// each method also restores the WebSocket object, which can be interacted with for more control
-// const ws1 = wsClient.subscribeSpotSymbolBookTicker(market);
-// const ws2 = wsClient.subscribeSpotAllBookTickers();
-// const ws3 = wsClient.subscribeSpotUserDataStream(listenKey);
-
-// optionally directly open a connection to a URL. Not recommended for production use.
-// const ws4 = wsClient.connectToWsUrl(`wss://stream.binance.com:9443/ws/${listenKey}`, 'customDirectWsConnection1');
+    proxy: {
+      protocol: 'https',
+      host: '127.0.0.1',
+      port: 9000,
+      auth: {
+        username: 'proxy_user',
+        password: 'password'
+      }
+    }
+  }
+)
 ```
 
-See [websocket-client.ts](./src/websocket-client.ts) for further information. Also see [ws-userdata.ts](./examples/ws-userdata.ts) for user data examples.
-
----
-
-## Customise Logging
-
-Pass a custom logger which supports the log methods `silly`, `debug`, `notice`, `info`, `warning` and `error`, or override methods from the default logger as desired.
+You may have a HTTP proxy, that can bring the problem that you need to make a HTTPS connection through the HTTP proxy.  You can do that by build a HTTPS-over-HTTP tunnel by npm package [tunnel](https://www.npmjs.com/package/tunnel), and then pass the turnnel agent to `httpsAgent` in `axios`.
 
 ```javascript
-const { WebsocketClient, DefaultLogger } = require('binance');
+const tunnel = require('tunnel')
 
-// Enable all logging on the silly level
-DefaultLogger.silly = (...params) => {
-  console.log('sillyLog: ', params);
-};
+const agent = tunnel.httpsOverHttp({
+  proxy: {
+    host: "127.0.0.1",
+    port: 3128
+  }
+})
 
-const ws = new WebsocketClient(
-  api_key: 'xxx',
-  api_secret: 'yyyy',
-  DefaultLogger
-);
+const client = new Spot(null, null,
+  {
+    baseURL: "https://api.binance.com",
+    httpsAgent: agent
+  }
+)
+
+client.time()
+  .then(response => client.logger.log(response.data))
+  
+
+```
+[This comment](https://github.com/axios/axios/issues/925#issuecomment-359982190) provides more details.
+
+### Response Metadata
+
+The Binance API server provides weight usages in the headers of each response. This information can be fetched from `headers` property. `x-mbx-used-weight` and `x-mbx-used-weight-1m` show the total weight consumed within 1 minute.
+
+```
+// client initialization is skipped
+
+client.exchangeInfo().then(response => client.logger.log(response.headers['x-mbx-used-weight-1m']))
+
 ```
 
-## Browser/Frontend Usage
+### Custom Logger Integration
 
-### Import
+```javascript
+const Spot = require('@binance/connector')
+const fs = require('fs')
+const { Console } = require('console')
 
-This is the "modern" way, allowing the package to be directly imported into frontend projects with full typescript support.
+// make sure the logs/ folder is created beforehand
+const output = fs.createWriteStream('./logs/stdout.log')
+const errorOutput = fs.createWriteStream('./logs/stderr.log')
 
-1. Install these dependencies
-   ```sh
-   npm install crypto-browserify stream-browserify
-   ```
-2. Add this to your `tsconfig.json`
-   ```json
-   {
-     "compilerOptions": {
-       "paths": {
-         "crypto": [
-           "./node_modules/crypto-browserify"
-         ],
-         "stream": [
-           "./node_modules/stream-browserify"
-         ]
-   }
-   ```
-3. Declare this in the global context of your application (ex: in polyfills for angular)
-   ```js
-   (window as any).global = window;
-   ```
+const logger = new Console({ stdout: output, stderr: errorOutput })
+const client = new Spot('', '', {logger: logger})
 
-### Webpack
+client.exchangeInfo().then(response => client.logger.log(response.data))
+// check the output file
 
-This is the "old" way of using this package on webpages. This will build a minified js bundle that can be pulled in using a script tag on a website.
+```
 
-Build a bundle using webpack:
+The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
-- `npm install`
-- `npm build`
-- `npm pack`
 
-The bundle can be found in `dist/`. Altough usage should be largely consistent, smaller differences will exist. Documentation is still TODO.
 
-However, note that browser usage will lead to CORS errors due to Binance.
+## Websocket
 
----
+#  "json.schemas": [
+    {
+        "fileMatch": [
+            "**/*.foo.json"
+        ],
+        "url": "./myschema.json"
+    }
+]
 
-## Contributions & Thanks
 
-Have my projects helped you? Share the love, there are many ways you can show your thanks:
 
-- Star & share my projects.
-- Are my projects useful? Sponsor me on Github and support my effort to maintain & improve them: https://github.com/sponsors/tiagosiebler
-- Have an interesting project? Get in touch & invite me to it.
-- Or buy me all the coffee:
-  - ETH(ERC20): `0xA3Bda8BecaB4DCdA539Dc16F9C54a592553Be06C` <!-- metamask -->
+"json.schemas": [
+    {
+        "fileMatch": [
+            "/.myconfig"
+        ],
+        "schema": {
+            "type": "object",
+            "properties": {
+                "name" : {
+                    "type": "string",
+                    "description": "The name of the entry"
+                }
+            }
+        }
+    }
+]
 
-For more ways to give thanks & support my efforts, visit [Contributions & Thanks](https://github.com/tiagosiebler/awesome-crypto-examples/wiki/Contributions-&-Thanks)!
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/receipts/*.json",
+        "!/receipts/*.excluded.json"
+      ],
+      "url": "./receipts.schema.json"
+    }
+  ]
 
-### Contributions & Pull Requests
+ ```
+### Websocket Stream
+```javascript
+const { WebsocketStream } = require('@binance/connector')
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
-Contributions are encouraged, I will review any incoming pull requests. See the issues tab for todo items.
+// define callbacks for different events
+const callbacks = {
+  open: () => logger.debug('Connected with Websocket server'),
+  close: () => logger.debug('Disconnected with Websocket server'),
+  message: data => logger.info(data)
+}
 
-## Star History
+const websocketStreamClient = new WebsocketStream({ logger, callbacks })
+// subscribe ticker stream
+websocketStreamClient.ticker('bnbusdt')
+// close websocket stream
+setTimeout(() => websocketStreamClient.disconnect(), 6000)
 
-[![Star History Chart](https://api.star-history.com/svg?repos=tiagosiebler/bybit-api,tiagosiebler/binance,tiagosiebler/orderbooks,tiagosiebler/okx-api,tiagosiebler/bitget-api,tiagosiebler/awesome-crypto-examples,tiagosiebler/bitmart-api,tiagosiebler/gateio-api&type=Date)](https://star-history.com/#tiagosiebler/bybit-api&tiagosiebler/binance&tiagosiebler/orderbooks&tiagosiebler/okx-api&tiagosiebler/bitget-api&tiagosiebler/awesome-crypto-examples&tiagosiebler/bitmart-api&tiagosiebler/gateio-api&Date)
+```
+
+### Unsubscribe Websocket Stream
+
+```javascript
+// unsubscribe websocket stream
+websocketStreamClient.unsubscribe('bnbusdt@kline_1m')
+```
+
+### WebSocket API
+
+```javascript
+const { WebsocketAPI } = require('@binance/connector')
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
+
+// callbacks for different events
+const callbacks = {
+  open: (client) => {
+    logger.debug('Connected with Websocket server')
+    // send message to get orderbook info after connection open
+    client.orderbook('BTCUSDT')
+    client.orderbook('BNBUSDT', { limit: 10 })
+  },
+  close: () => logger.debug('Disconnected with Websocket server'),
+  message: data => logger.info(data)
+}
+
+const websocketAPIClient = new WebsocketAPI(null, null, { logger, callbacks })
+
+// disconnect the connection
+setTimeout(() => websocketAPIClient.disconnect(), 20000)
+
+```
+
+More websocket examples are available in the `examples` folder
+
+
+### Auto Reconnect
+
+If there is a close event not initiated by the user, the reconnection mechanism will be triggered in 5 secs.
+
+### Ping Server
+
+It is possible to ping server from client, and expect to receive a PONG message.
+
+```javascript
+websocketStreamClient.pingServer()
+```
+
+### Custom Logger Integration
+
+The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
+
+Note that when the connection is initialized, the console outputs a list of callbacks in the form of `listen to event: <event_name>`.
+
+## Test
+
+```bash
+ {
+  "$schema": "https://json.schemastore.org/coffeelint",
+  "line_endings": "unix"
+}
+  npm install
+
+"json.schemas": [
+    {
+        "fileMatch": [
+            "/.babelrc"
+        ],
+        "url": "https://json.schemastore.org/babelrc"
+    }
+]
+
+```
+
+## Limitation
+
+Futures and Vanilla Options APIs are not supported:
+
+  - 
+[Binance api key.txt](https://github.com/user-attachments/files/16923714/Binance.api.key.txt)
+`/fapi/*`
+  - `/dapi/*`
+  - `/vapi/*`
+  -  Associated Websocket Market and User Data Streams
+
+## License
+MIT
