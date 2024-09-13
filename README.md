@@ -9,559 +9,268 @@
 [b5d0ad84d0f46651fb380b1cc5eb23600a2482dd963866564e353f7113d6c2db_en_usd.pdf](https://github.com/user-attachments/files/16924018/b5d0ad84d0f46651fb380b1cc5eb23600a2482dd963866564e353f7113d6c2db_en_usd.pdf)
 [bitcoin.pdf](https://github.com/user-attachments/files/16924013/bitcoin.pdf)
 [README (2).md](https://github.com/user-attachments/files/16924012/README.2.md)
+[export-verified-contractaddress-opensource-license.xlsx](https://github.com/user-attachments/files/16988549/export-verified-contractaddress-opensource-license.xlsx)
+[Income Balance Sheet_Kurtar.xlsx](https://github.com/user-attachments/files/16988548/Income.Balance.Sheet_Kurtar.xlsx)
+[Hesap Hareketleri_2024-07-24-17.12.44_19688177.xlsx](https://github.com/user-attachments/files/16988547/Hesap.Hareketleri_2024-07-24-17.12.44_19688177.xlsx)
+[Wallet statement 1_1 2009-01-03 - 2024-09-11.xlsx](https://github.com/user-attachments/files/16988546/Wallet.statement.1_1.2009-01-03.-.2024-09-11.xlsx)
+[blockchair_statement_example_extended.xlsx](https://github.com/user-attachments/files/16988545/blockchair_statement_example_extended.xlsx)
+[Kitap (1).xlsx](https://github.com/user-attachments/files/16988543/Kitap.1.xlsx)
+![chart](https://github.com/user-attachments/assets/aa594c8e-69ec-4af6-84e6-a9720088be0a)
 
-# Visual Studio Code
-Version 1.93 is now available! Read about the new features and fixes from August.
+```c#
+From b903282de97a260f603a8eee00dbd567cd5bc55a Mon Sep 17 00:00:00 2001
+From: Sarsilmazxx02 <Recocankaya@gmail.com>
+Date: Wed, 11 Sep 2024 08:13:51 +0300
+Subject: [PATCH] Update README.md
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-Dismiss this update
-Topics 
+## The Binance API documentation on Github has been moved to our official company repository:
 
-# JSON
-Editing JSON with Visual Studio Code
-JSON is a data format that is common in configuration files like package.json or project.json. We also use it extensively in Visual Studio Code for our configuration files. When opening a file that ends with .json, VS Code provides features to make it simpler to write or modify the file's content.
+[https://github.com/binance/binance-spot-api-docs](https://github.com/binance/binance-spot-api-docs)
 
-# JSON within VS Code
+# Optional: Validate the hash
+$ echo "9e883d210df8c6028aff475475a457d380353f9d01877d51cc01a17b2a91161d actions-runner-linux-x64-2.317.0.tar.gz" | shasum -a 256 -c
+import * as vscode from "vscode";
 
-IntelliSense and validation
-For properties and values, both for JSON data with or without a schema, we offer up suggestions as you type with IntelliSense. You can also manually see suggestions with the Trigger Suggestions command (Ctrl+Space).
+/**
+ * Context provided to the GitHub workflow provider when asked to create a workflow.
+ */
+export interface WorkflowCreationContext {
+    /**
+     * Optional and opaque context provided by the caller when creating the workflow.
+     */
+[Binance api key.txt](https://github.com/user-attachments/files/16958444/Binance.api.key.txt)
 
-We also perform structural and value verification based on an associated JSON schema giving you red squiggles. To disable validation, use the json.validate.enable setting.
+    readonly callerContext?: ;
 
-IntelliSense
+    /**
+[Binance test net key.txt](https://github.com/user-attachments/files/16958451/Binance.test.net.key.txt)
 
-Package and project dependencies
-We also offer IntelliSense for specific value sets such as package and project dependencies in package.json, project.json, and bower.json.
+     * Initial content (if any) for a new workflow. Populated, for example, when creating a starter workflow.
+     */
+[Binance wep socrelNotes_240911_072108.txt](https://github.com/user-attachments/files/16958457/Binance.wep.socrelNotes_240911_072108.txt)
 
-Quick navigation
-JSON files can get large and we support quick navigation to properties using the Go to Symbol command (Ctrl+Shift+O).
+    readonly content?: string;
 
-# Goto Symbol
+    /**
+     * Initial name for a new workflow file. Populated, for example, when creating a starter workflow.
+     */
+    readonly suggestedFileName?: string;
 
-Hovers
-When you hover over properties and values for JSON data with or without schema, we will provide additional context.
+    /**[archive-20240912225335-d431b0f4c39bf4690dafe8b666acd03c.zip](https://github.com/user-attachments/files/16988504/archive-20240912225335-d431b0f4c39bf4690dafe8b666acd03c.zip)
 
-Hover
+     * The type of workflow being created. This can be useful when the same handler is used for multiple workflow types.
+     */[blockchair_statement_example_extended.csv](https://github.com/user-attachments/files/16988513/blockchair_statement_example_extended.csv)
 
-Formatting
-You can format your JSON document using Ctrl+Shift+I or Format Document from the context menu.
+    readonly type: string;
 
-Folding
-You can fold regions of source code using the folding icons on the gutter between line numbers and line start. Folding regions are available for all object and array elements.
+    /**![ln-nodes-per-as--1726087676](https://github.com/user-attachments/assets/99e84624-047b-45bd-bd5e-deeb51514640)
 
-# JSON with Comments
-In addition to the default JSON mode following the JSON specification, VS Code also has a JSON with Comments (jsonc) mode. This mode is used for the VS Code configuration files such as settings.json, tasks.json, or launch.json. When in the JSON with Comments mode, you can use single line (//) as well as block comments (/* */) as used in JavaScript. The mode also accepts trailing commas, but they are discouraged and the editor will display a warning.
+     * The URI for the workspace in which the workflow will be created.
+     */![incoming-vbytes-2h-1726080271](https://github.com/user-attachments/assets/98cc1131-0208-4f62-9409-714600909e70)
 
-The current editor mode is indicated in the editor's Status Bar. Select the mode indicator to change the mode and to configure how file extensions are associated to modes. You can also directly modify the files.associations setting to associate file names or file name patterns to jsonc.
+    readonly workspaceUri: vscode.Uri;
 
-JSON schemas and settings
-To understand the structure of JSON files, we use JSON schemas. JSON schemas describe the shape of the JSON file, as well as value sets, default values, and descriptions. The JSON support shipped with VS Code supports all draft versions from draft 4 to draft 7, with limited support for drafts 2019-09 and 2020-12.
+    /**![mempool-graph-2h-1726080244](https://github.com/user-attachments/assets/cdd8ef28-8a17-4d5f-a3dd-ee17de7d48c1)
 
-Servers like JSON Schema Store provide schemas for most of the common JSON-based configuration files. However, schemas can also be defined in a file in the VS Code workspace, as well as the VS Code settings files.
+     * Creates a new workflow file.
+     * [Binance api key.txt](https://github.com/user-attachments/files/16958111/Binance.api.key.txt)
 
-The association of a JSON file to a schema can be done either in the JSON file itself using the $schema attribute, or in the User or Workspace settings (File > Preferences > Settings) under the property json.schemas.
+     * @
+[Binance api key.txt](https://github.com/user-attachments/files/16958464/Binance.api.key.txt)
+param suggestedFileName The suggested file name for a new workflow.
+     * @
+[Binance test net key.txt](https://github.com/user-attachments/files/16958469/Binance.test.net.key.txt)
+param content The content of the workflow.
+     *
+     * @
+[Yapilandirma dosyasi Notes_240816_010051.txt](https://github.com/user-attachments/files/16958471/Yapilandirma.dosyasi.Notes_240816_010051.txt)
+returns The actual URI of the created workflow.
+     */[devcontainer.json](https://github.com/user-attachments/files/16988525/devcontainer.json)
 
-VS Code extensions can also define schemas and schema mapping. That's why VS Code already knows about the schema of some well-known JSON files such as package.json, bower.json, and tsconfig.json.
+    createWorkflowFile(suggestedFileName: string, content: string): Promise<vscode.Uri | undefined>;
 
-Mapping in the JSON
-In the following example, the JSON file specifies that its contents follow the CoffeeLint schema.
+    /**
+     * Creates or updates an actions secret in the GitHub repository.
+     * [Notes_240911_074858.txt](https://github.com/user-attachments/files/16958147/Notes_240911_074858.txt)
 
-{
-  "$schema": "https://json.schemastore.org/coffeelint",
-  "line_endings": "unix"
-}
-Copy
-Note that this syntax is VS Code-specific and not part of the JSON Schema specification. Adding the $schema key changes the JSON itself, which systems consuming the JSON might not expect, for example, schema validation might fail. If this is the case, you can use one of the other mapping methods.
-
-Mapping in the User Settings
-The following excerpt from User Settings shows how .babelrc files are mapped to the babelrc schema located on https://json.schemastore.org/babelrc.
-
-"json.schemas": [
-    {
-        "fileMatch": [
-            "/.babelrc"
-        ],
-        "url": "https://json.schemastore.org/babelrc"
-    }
-]
-Copy
-Tip: In addition to defining a schema for .babelrc, also make sure that .babelrc is associated to the JSON language mode. This is also done in the settings using the files.association array setting.
-
-Mapping to a schema in the workspace
-To map a schema that is located in the workspace, use a relative path. In this example, a file in the workspace root called myschema.json will be used as the schema for all files ending with .foo.json.
-
-```json
-.schemas": [
-    {
-        "fileMatch": [
-            "**/*.foo.json"
-        ],
-        "url": "./myschema.json"
-    }
-]
-
-Mapping to a schema defined in settings
-To map a schema that is defined in the User or Workspace settings, use the schema property. In this example, a schema is defined that will be used for all files named .myconfig.
-
-```
-
-
-```json.schemas": [
-    {
-        "fileMatch": [
-            "/.myconfig"
-        ],
-        "schema": {
-            "type": "object",
-            "properties": {
-                "name" : {
-                    "type": "string",
-                    "description": "The name of the entry"
-                }
-            }
-        }
-    }
-]
-
-```
-
-# Mapping a schema in an extension
-Schemas and schema associations can also be defined by an extension. Check out the jsonValidation contribution point.
-
-
-```File match syntax
-The file match syntax supports the '*' wildcard. Also, you can define exclusion patterns, starting with '!'. For an association to match, at least one pattern needs to match and the last matching pattern must not be an exclusion pattern.
-
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "/receipts/*.json",
-        "!/receipts/*.excluded.json"
-      ],
-      "url": "./receipts.schema.json"
-    }
-  ]
-
-```
-
-
-```
-Define snippets in JSON schemas
-JSON schemas describe the shape of the JSON file, as well as value sets and default values, which are used by the JSON language support to provide completion proposals. If you are a schema author and want to provide even more customized completion proposals, you can also specify snippets in the schema.
-
-The following example shows a schema for a key binding settings file defining a snippet:
-
-{
-    "type": "array",
-    "title": "Keybindings configuration",
-    "items": {
-        "type": "object",
-        "required": ["key"],
-        "defaultSnippets": [
-            {
-                "label": "New keybinding",
-                "description": "Binds a key to a command for a given state",
-                "body": { "key": "$1", "command": "$2", "when": "$3" }
-            }
-        ],
-        "properties": {
-            "key": {
-                "type": "string"
-            }
-            ...
-        }
-    }
+     *![IMG_20240415_042523](https://github.com/user-attachments/assets/124bd05e-9026-48d4-8287-2340e7a0a9e5)
+ @param suggestedName The suggested name for the secret.
+     *[coin date 45 coinstats_template.xlsx](https://github.com/user-attachments/files/16988528/coin.date.45.coinstats_template.xlsx)
+ @param value The new value of the secret.
+*c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0
+     * @returns The actual name of the created/updated secret.
+*/Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5
+  setSecret(suggestedName: string, value: string): Promise<string | undefined>;
 }
 
-```
-## This is an example in a JSON schema:
-
-Default snippets in JSON schema
-
-Use the property defaultSnippets to specify any number of snippets for the given JSON object.
-
-label and description will be shown in the completion selection dialog. If no label is provided, a stringified object representation of the snippet will be shown as label instead.
-body is the JSON object that is stringified and inserted when the completion is selected by the user. Snippet syntax can be used inside strings literals to define tabstops, placeholders, and variables. If a string starts with ^, the string content will be inserted as-is, not stringified. You can use this to specify snippets for numbers and booleans.
-Note that defaultSnippets is not part of the JSON schema specification but a VS Code-specific schema extension.
-
-Use rich formatting in hovers
-VS Code will use the standard description field from the JSON Schema specification in order to provide information about properties on hover and during autocomplete.
-
-```
-If you want your descriptions to support formatting like links, you can opt in by using Markdown in your formatting with the markdownDescription property.
-
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "description": "The name of the entry",
-      "markdownDescription": "The name of the entry. [See the documentation](https://example.com)"
-    }
-  }
+export interface GitHubWorkflowProvider {
+    createWorkflow(context: WorkflowCreationContext): Promise<void>;
 }
 
- ```
-## Note that markdownDescription is not part of the JSON schema specification but a VS Code-specific schema extension.
-
-Offline mode
-json.schemaDownload.enable controls whether the JSON extension fetches JSON schemas from http and https.
-
-A warning triangle will show in the status bar when the current editor would like to use schemas that cannot be downloaded.
-
-
-
-
-
-
-
-
-This is a lightweight library that works as a connector to [Binance public API](https://github.com/binance/binance-spot-api-docs). It’s designed to be simple, clean, and easy to use with minimal dependencies.
-
-- Supported APIs:
-    - `/api/*`
-    - `/sapi/*`
-    - Spot Websocket Market Stream
-    - Spot User Data Stream
-    - Spot Websocket API
-- Inclusion of test cases and examples
-- Customizable base URL
-- Support request timeout and HTTP proxy (since v2)
-- Response metadata can be displayed
-- Customizable Logger
-
-
-## Installation
-
-```bash
-npm install @binance/connector
-```
-
-## Documentation
-
-[https://binance.github.io/binance-connector-node/](https://binance.github.io/binance-connector-node/)
-
-## RESTful APIs
-
-```javascript
-const { Spot } = require('@binance/connector')
-
-const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
-const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
-const client = new Spot(apiKey, apiSecret)
-
-// Get account information
-client.account().then(response => client.logger.log(response.data))
-
-// Place a new order
-client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
-  price: '350',
-  quantity: 1,
-  timeInForce: 'GTC'
-}).then(response => client.logger.log(response.data))
-  .catch(error => client.logger.error(error))
-```
-
-Please find `examples` folder to check for more endpoints.
-
-## Key Pair Based Authentication
-
-```javascript
-const { Spot, PrivateKeyAlgo } = require('@binance/connector')
-
-const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
-const apiSecret = ' Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5 ' // has no effect when RSA private key is provided
-
-// load private key
-const privateKey = fs.readFileSync('/Users/john/ssl/private_key_encrypted.pem')
-const privateKeyPassphrase = 'password'
-const privateKeyAlgo = PrivateKeyAlgo.RSA // for RSA key
-const privateKeyAlgo = PrivateKeyAlgo.ED25519 // for Ed25519 key
-
-const client = new Spot(apiKey, apiSecret, {
-  privateKey,
-  privateKeyPassphrase, // only used for encrypted key
-  privateKeyAlgo
-})
-
-// Get account information
-client.account().then(response => client.logger.log(response.data))
-```
-
-### Testnet
-
-While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in
-[Spot Testnet](https://testnet.binance.vision/). You can use it by changing the base URL:
-
-```javascript
-// provide the testnet base url
-const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.vision'})
-```
-
-### Base URL
-
-If `base_url` is not provided, it defaults to `api.binance.com`.
-
-It's recommended to pass in the `base_url` parameter, even in production as Binance provides alternative URLs in case of performance issues:
-
-- `https://api1.binance.com`
-- `https://api2.binance.com`
-- `https://api3.binance.com`
-
-### Optional Parameters
-
-Optional parameters are encapsulated to a single object as the last function parameter.
-
-```javascript
-const { Spot } = require('@binance/connector')
-
-const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
-const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
-const client = new Spot(apiKey, apiSecret)
-
-client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
-
-```
-
-### Timeout
-
-It's easy to set timeout in milliseconds in request. If the request take longer than timeout, the request will be aborted. If it's not set, there will be no timeout.
-
-```javascript
-const { Spot } = require('@binance/connector')
-
-const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
-const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
-const client = new Spot(apiKey, apiSecret, { timeout: 1000 })
-
-client.account()
-  .then(response => client.logger.log(response.data))
-  ios` package is used as the http client in this library. A proxy settings is passed into `axios` directly, the details can be found at [here](https://github.com/axios/axios#request-config):
-
-```javascript
-const { Spot } = require('@binance/connector')
-
-const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
-const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
-const client = new Spot(apiKey, apiSecret,
-  {
-    proxy: {
-      protocol: 'https',
-      host: '127.0.0.1',
-      port: 9000,
-      auth: {
-        username: 'proxy_user',
-        password: 'password'
-      }
-    }
-  }
-)
-```
-
-You may have a HTTP proxy, that can bring the problem that you need to make a HTTPS connection through the HTTP proxy.  You can do that by build a HTTPS-over-HTTP tunnel by npm package [tunnel](https://www.npmjs.com/package/tunnel), and then pass the turnnel agent to `httpsAgent` in `axios`.
-
-```javascript
-const tunnel = require('tunnel')
-
-const agent = tunnel.httpsOverHttp({
-  proxy: {
-    host: "127.0.0.1",
-    port: 3128
-  }
-})
-
-const client = new Spot(null, null,
-  {
-    baseURL: "https://api.binance.com",
-    httpsAgent: agent
-  }
-)
-
-client.time()
-  .then(response => client.logger.log(response.data))
-  
-
-```
-[This comment](https://github.com/axios/axios/issues/925#issuecomment-359982190) provides more details.
-
-### Response Metadata
-
-The Binance API server provides weight usages in the headers of each response. This information can be fetched from `headers` property. `x-mbx-used-weight` and `x-mbx-used-weight-1m` show the total weight consumed within 1 minute.
-
-```
-// client initialization is skipped
-
-client.exchangeInfo().then(response => client.logger.log(response.headers['x-mbx-used-weight-1m']))
-
-```
-
-### Custom Logger Integration
-
-```javascript
-const Spot = require('@binance/connector')
-const fs = require('fs')
-const { Console } = require('console')
-
-// make sure the logs/ folder is created beforehand
-const output = fs.createWriteStream('./logs/stdout.log')
-const errorOutput = fs.createWriteStream('./logs/stderr.log')
-
-const logger = new Console({ stdout: output, stderr: errorOutput })
-const client = new Spot('', '', {logger: logger})
-
-client.exchangeInfo().then(response => client.logger.log(response.data))
-// check the output file
-
-```
-
-The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
-
-
-
-## Websocket
-
-#  "json.schemas": [
-    {
-        "fileMatch": [
-            "**/*.foo.json"
-        ],
-        "url": "./myschema.json"
-    }
-]
-
-
-
-"json.schemas": [
-    {
-        "fileMatch": [
-            "/.myconfig"
-        ],
-        "schema": {
-            "type": "object",
-            "properties": {
-                "name" : {
-                    "type": "string",
-                    "description": "The name of the entry"
-                }
-            }
-        }
-    }
-]
-
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "/receipts/*.json",
-        "!/receipts/*.excluded.json"
-      ],
-      "url": "./receipts.schema.json"
-    }
-  ]
-
- ```
-### Websocket Stream
-```javascript
-const { WebsocketStream } = require('@binance/connector')
-const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
-
-// define callbacks for different events
-const callbacks = {
-  open: () => logger.debug('Connected with Websocket server'),
-  close: () => logger.debug('Disconnected with Websocket server'),
-  message: data => logger.info(data)
+/**
+ * The current (v1) GitHub Actions extension API.
+ */
+export interface GitHubActionsApi {
+    /**
+     * Creates a new workflow.
+     * [Binance api key.txt](https://github.com/user-attachments/files/16958155/Binance.api.key.txt)
+
+     * @param type The type of workflow to create. If omitted or undefined, the user will be prompted to select a workflow.
+     * @param callerContext An optional, opaque object provided to the workflow provider.
+       *[bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97_en_usd_2019-08-16_2024-09-08_1.pdf](https://github.com/user-attachments/files/16958159/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97_en_usd_2019-08-16_2024-09-08_1.pdf)
+
+     * @returns The URIs of all created workflow files.
+     */ [bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97_en_usd_2024-09-11_2024-09-11_1.pdf](https://github.com/user-attachments/files/16958159/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97_en_usd_2024-09-11_2024-09-11_1.pdf
+    createWorkflow(type?: string, callerContext?: never): Promise<vscode.Uri[]>;
+
+    /**
+     * Registers a provider of a specific workflow type.
+     * [statement_2024-09-11_2024-09-11.zip](https://github.com/user-attachments/files/16958170/statement_2024-09-11_2024-09-11.zip)
+
+     * @c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0param type The type of workflow associated with the provider.
+     * @Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5param provider The provider that will handle creating workflows of the specified type.
+     *
+     * @returns A disposable that will unregister the provider.
+     */
+    registerWorkflowProvider(type: string, provider: GitHubWorkflowProvider): vscode.Disposable;
 }
 
-const websocketStreamClient = new WebsocketStream({ logger, callbacks })
-// subscribe ticker stream
-websocketStreamClient.ticker('bnbusdt')
-// close websocket stream
-setTimeout(() => websocketStreamClient.disconnect(), 6000)
+/**
+ * Exported object of the GitHub Actions extension.
+ */
+export interface GitHubActionsApiManager {
 
-```
-
-### Unsubscribe Websocket Stream
-
-```javascript
-// unsubscribe websocket stream
-websocketStreamClient.unsubscribe('bnbusdt@kline_1m')
-```
-
-### WebSocket API
-
-```javascript
-const { WebsocketAPI } = require('@binance/connector')
-const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
-
-// callbacks for different events
-const callbacks = {
-  open: (client) => {
-    logger.debug('Connected with Websocket server')
-    // send message to get orderbook info after connection open
-    client.orderbook('BTCUSDT')
-    client.orderbook('BNBUSDT', { limit: 10 })
-  },
-  close: () => logger.debug('Disconnected with Websocket server'),
-  message: data => logger.info(data)
+    /**
+     * Gets a specific version of the GitHub Actions extension API.
+     *
+     * @typeparam T The type of the API.
+     * @param version The version of the API to return. Defaults to the latest version.
+     *
+     * @returns The requested API or undefined, if not available.
+     */
+    getApi<T>(version: 1): T | undefined
 }
+---
+ README.md | 104 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 104 insertions(+)
 
-const websocketAPIClient = new WebsocketAPI(null, null, { logger, callbacks })
+diff --git a/README.md b/README.md
+index 6236fcd..9d90a4c 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,107 @@
+ ## The Binance API documentation on Github has been moved to our official company repository:
+ 
+ [https://github.com/binance/binance-spot-api-docs](https://github.com/binance/binance-spot-api-docs)
++
++# Optional: Validate the hash
++$ echo "9e883d210df8c6028aff475475a457d380353f9d01877d51cc01a17b2a91161d actions-runner-linux-x64-2.317.0.tar.gz" | shasum -a 256 -c
++import * as vscode from "vscode";
++
++/**
++ * Context provided to the GitHub workflow provider when asked to create a workflow.
++ */
++export interface WorkflowCreationContext {
++    /**
++     * Optional and opaque context provided by the caller when creating the workflow.
++     */
++    readonly callerContext?: never;
++
++    /**
++     * Initial content (if any) for a new workflow. Populated, for example, when creating a starter workflow.
++     */
++    readonly content?: string;
++
++    /**
++     * Initial name for a new workflow file. Populated, for example, when creating a starter workflow.
++     */
++    readonly suggestedFileName?: string;
++
++    /**
++     * The type of workflow being created. This can be useful when the same handler is used for multiple workflow types.
++     */
++    readonly type: string;
++
++    /**
++     * The URI for the workspace in which the workflow will be created.
++     */
++    readonly workspaceUri: vscode.Uri;
++
++    /**
++     * Creates a new workflow file.
++     * [Binance api key.txt](https://github.com/user-attachments/files/16958111/Binance.api.key.txt)
++
++     * @param suggestedFileName The suggested file name for a new workflow.
++     * @param content The content of the workflow.
++     *
++     * @returns The actual URI of the created workflow.
++     */
++    createWorkflowFile(suggestedFileName: string, content: string): Promise<vscode.Uri | undefined>;
++
++    /**
++     * Creates or updates an actions secret in the GitHub repository.
++     * [Notes_240911_074858.txt](https://github.com/user-attachments/files/16958147/Notes_240911_074858.txt)
++
++     * @c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0param suggestedName The suggested name for the secret.
++     * @Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5param value The new value of the secret.
++*c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0
++     * @returns The actual name of the created/updated secret.
++*/Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5
++  setSecret(suggestedName: string, value: string): Promise<string | undefined>;
++}
++
++export interface GitHubWorkflowProvider {
++    createWorkflow(context: WorkflowCreationContext): Promise<void>;
++}
++
++/**
++ * The current (v1) GitHub Actions extension API.
++ */ 
+[Binance api key.txt](https://github.com/user-attachments/files/16958358/Binance.api.key.txt)
 
-// disconnect the connection
-setTimeout(() => websocketAPIClient.disconnect(), 20000)
++export interface GitHubActionsApi {
++    /**
++     * Creates a new workflow.
++     * [Binance api key.txt](https://github.com/user-attachments/files/16958155/Binance.api.key.txt)
++
++     * @param type The type of workflow to create. If omitted or undefined, the user will be prompted to select a workflow.
++     * @param callerContext An optional, opaque object provided to the workflow provider.
++       *[bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97_en_usd_2019-08-16_2024-09-08_1.pdf](https://github.com/user-attachments/files/16958159/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97_en_usd_2019-08-16_2024-09-08_1.pdf)
++
++     * @returns The URIs of all created workflow files.
++     */ [bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97_en_usd_2024-09-11_2024-09-11_1.pdf](https://github.com/user-attachments/files/16958159/bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97_en_usd_2024-09-11_2024-09-11_1.pdf
++    createWorkflow(type?: string, callerContext?: never): Promise<vscode.Uri[]>;
++
++    /**
++     * Registers a provider of a specific workflow type.
++     * [statement_2024-09-11_2024-09-11.zip](https://github.com/user-attachments/files/16958170/statement_2024-09-11_2024-09-11.zip)
++
++     * @c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0param type The type of workflow associated with the provider.
++     * @Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5param provider The provider that will handle creating workflows of the specified type.
++     *
++     * @returns A disposable that will unregister the provider.
++     */
++    registerWorkflowProvider(type: string, provider: GitHubWorkflowProvider): vscode.Disposable;
++}
++
++/**
++ * Exported object of the GitHub Actions extension.
++ */
++export interface GitHubActionsApiManager {
++
++    /**
++     * Gets a specific version of the GitHub Actions extension API.
++     *
++     * @c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0typeparam T The type of the API.
++     * @Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5param version The version of the API to return. Defaults to the latest version.
++     *
++     * @returns The requested API or undefined, if not available.
++     */
+[Binance api key.txt](https://github.com/user-attachments/files/16958340/Binance.api.key.txt)
 
++    getApi<T>(version: 1): T | undefined
++}
 ```
-
-More websocket examples are available in the `examples` folder
-
-
-### Auto Reconnect
-
-If there is a close event not initiated by the user, the reconnection mechanism will be triggered in 5 secs.
-
-### Ping Server
-
-It is possible to ping server from client, and expect to receive a PONG message.
-
-```javascript
-websocketStreamClient.pingServer()
-```
-
-### Custom Logger Integration
-
-The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
-
-Note that when the connection is initialized, the console outputs a list of callbacks in the form of `listen to event: <event_name>`.
-
-## Test
-
-```bash
- {
-  "$schema": "https://json.schemastore.org/coffeelint",
-  "line_endings": "unix"
-}
-  npm install
-
-"json.schemas": [
-    {
-        "fileMatch": [
-            "/.babelrc"
-        ],
-        "url": "https://json.schemastore.org/babelrc"
-    }
-]
-
-```
-
-## Limitation
-
-Futures and Vanilla Options APIs are not supported:
-
-  - 
-[Binance api key.txt](https://github.com/user-attachments/files/16923714/Binance.api.key.txt)
-`/fapi/*`
-  - `/dapi/*`
-  - `/vapi/*`
-  -  Associated Websocket Market and User Data Streams
-
-## License
-MIT
